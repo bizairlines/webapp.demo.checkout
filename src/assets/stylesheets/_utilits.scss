@@ -1,0 +1,84 @@
+.second-font {
+  font-family: Museo;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+[href] {
+  cursor: pointer;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.padding-h-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.flex-box-child-fix {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.scrollable {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.scrollable-content {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.border-left-0{
+  border-left: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.flip-h {
+  transform: scaleX(-1);
+}

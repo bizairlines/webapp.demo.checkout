@@ -1,0 +1,56 @@
+//Bootstrap
+$enable-flex: true !default;
+$enable-grid-classes: true !default;
+$grid-gutter-width-base: 32px;
+
+//Application
+$mainBackground: #f8f8f8;
+
+//Progress-line
+$progressLineFg: #143746;
+$progressLineBg: #00aabe;
+
+//Modal
+$modalCloseIcon: #999999;
+$modalBackground: #000000;
+$modalContainer: #ffffff;
+$modalIcon: #265877;
+$modalInfo: #005a73;
+
+//Buttons
+$buttonDisabled: #999999;
+
+//Headers
+$headerMain: #005a73;
+$paragraph: #4a4a4a;
+$paragraphSmall: #666666;
+
+//Form controls
+$formInput: #999999;
+$formLabel: #666666;
+$formErrorColor: #e03931;
+$formTip: #aaaaaa;
+$formBorder: #e3e3e3;
+
+//Toast
+$toastSuccess: darkcyan;
+$toastWarning: darkkhaki;
+$toastError: lightcoral;
+$toastText: #ffffff;
+
+//Switcher
+$switcherActive: #00aabe;
+$switcherInactive: #d8d8d8;
+
+//List
+$listHeader: #00aabe;
+$listControl: #005a73;
+$listDetail: #00aabe;
+$listDetailLink: #999999;
+$listDetailLine: #e8e8e8;
+
+// font colors
+
+$lightBlue : #00aabe;
+$lightGray : #eaeaea;
+$darkGray : #999;

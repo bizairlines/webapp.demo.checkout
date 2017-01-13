@@ -1,0 +1,28 @@
+.autocomplete {
+  position: relative;
+
+  .autocomplete-results {
+    background-color: #ffffff;
+    max-height: 300px;
+    overflow: auto;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    text-align: left;
+
+    .result-item {
+      height: 30px;
+      line-height: 30px;
+      padding: 0 10px;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+      }
+    }
+  }
+}

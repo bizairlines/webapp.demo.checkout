@@ -1,0 +1,45 @@
+body {
+  font-family: Lato;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.app {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh;
+  background: url("/images/bg.jpeg") center no-repeat $mainBackground;
+  overflow: auto;
+}
+
+textarea:focus, input:focus, select:focus, button{
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+a {
+  color: $lightBlue;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $lightBlue;
+}
+
+
+::-webkit-input-placeholder {color:#fff;}
+::-moz-placeholder          {color:#fff;}/* Firefox 19+ */
+:-moz-placeholder           {color:#fff;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#fff;}

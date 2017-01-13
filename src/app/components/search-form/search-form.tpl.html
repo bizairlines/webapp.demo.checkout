@@ -1,0 +1,49 @@
+<div class="search-form">
+
+  <div class="flights-label">
+    <i class="fa fa-plane"></i>
+    Flights
+  </div>
+
+  <div class="airports">
+    <div class="airport-input">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <biz-autocomplete title="From"
+                        for="departure_airport"
+                        type="airport"
+                        required="true"
+                        model="$ctrl.data.from">
+    </div>
+
+    <div class="swap">
+      <a href="#!"><i class="fa fa-exchange" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="airport-input">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <biz-autocomplete title="To"
+                        for="departure_airport"
+                        type="airport"
+                        required="true"
+                        model="$ctrl.data.to">
+    </div>
+  </div>
+
+  <div class="date-selector">
+    <i class="fa fa-calendar"></i>
+    <biz-datetime title="Date"
+                  for="date"
+                  model="$ctrl.data.date"
+                  type="date"
+                  format="DD MMM"
+                  placeholder="Date..."
+                  min="{{$ctrl.minDate}}">
+    </biz-datetime>
+    <!--<input type="text" placeholder="Chose date...">-->
+  </div>
+
+  <div class="find-button">
+    <a href="#!">Search</a>
+  </div>
+
+</div>

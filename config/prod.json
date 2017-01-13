@@ -1,0 +1,8 @@
+{
+	"EnvConstants" : 
+	{
+		"env": "PROD",
+		"apiUrl" : "https://api.bizairlines.com/v1",
+		"socketUrl": "wss://stage.ws.bizairlines.com"
+	}
+}

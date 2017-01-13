@@ -1,0 +1,32 @@
+<div class="search-results">
+  <search-form></search-form>
+
+  <div class="flights-list">
+    <div class="flight-item" ng-repeat="item in $ctrl.flights">
+      <div class="flex-block-row align-space-between">
+        <div class="from-to">
+
+          <div class="flight-number">{{item.flight_number}}</div>
+
+          <div class="direction">
+            {{item.departure_airport.name}} <span class="country-city">({{item.departure_airport.country.name}}, {{item.departure_airport.city}})</span>
+          </div>
+          <div class="direction">
+            {{item.arrive_airport.name}} <span class="country-city">({{item.arrive_airport.country.name}}, {{item.arrive_airport.city}})</span>
+          </div>
+        </div>
+
+        <div class="airline">
+          {{item.airline.name}}
+        </div>
+      </div>
+
+      <div class="flex-block-row align-space-between">
+        <div class="aircraft-name">
+          <i class="fa fa-plane"></i>
+          {{item.aircraft.aircraft.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

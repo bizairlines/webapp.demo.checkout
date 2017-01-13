@@ -1,0 +1,14 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  @include vendor-prefixes('border-radius', $radius);
+}
+
+@mixin border-radius-left($radius) {
+  border-radius: $radius 0 0 $radius;
+  @include vendor-prefixes('border-radius', $radius 0 0 $radius);
+}
+
+@mixin border-radius-right($radius) {
+  border-radius: 0 $radius $radius 0;
+  @include vendor-prefixes('border-radius', 0 $radius $radius 0);
+}

@@ -1,0 +1,75 @@
+<div class="datetime {{$ctrl.type == 'datetime' ? 'default' : $ctrl.type }}">
+    <div class="row date-range-inputs" ng-if="$ctrl.type == 'range'">
+        <biz-form-field class="col-xs-6"
+                title="From"
+                for="from"
+                ng-click="$ctrl.setRangeField('from')"
+        ng-class="{'wait-to-select' : $ctrl.rangeField == 'from'}">
+            <input id="from"
+                   type="text"
+                   ng-model="$ctrl.dateRange.from"
+                   name="from"
+                   placeholder="Date from..."/>
+        </biz-form-field>
+
+        <biz-form-field
+                class="col-xs-6"
+                title="To"
+                for="to"
+                ng-click="$ctrl.setRangeField('to')"
+                ng-class="{'wait-to-select' : $ctrl.rangeField == 'to'}">
+            <input id="to"
+                   type="text"
+                   ng-model="$ctrl.dateRange.to"
+                   name="to"
+                   placeholder="Date to..."/>
+        </biz-form-field>
+    </div>
+    <div class="datetime-date">
+        <div class="datetime-navigation">
+            <a href="" ng-click="$ctrl.updateMonth('prev')">
+                <i class="fa fa-caret-left" aria-hidden="true"></i>
+            </a>
+            <span>{{$ctrl.getTitle()}}</span>
+            <a href="" ng-click="$ctrl.updateMonth('next')">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="datetime-weekdays">
+            <span class="datetime-weekday" ng-repeat="weekday in $ctrl.calendar.weekdays">{{weekday}}</span>
+        </div>
+        <div class="datetime-dates" ng-click="$ctrl.select($event)">
+            <span class="datetime-day"
+                  date="{{day.date.format('YYYY-MM-DD')}}"
+                  ng-class="{
+                  inactive: $ctrl.isInactive(day),
+                  today: day.date.format('YYYY-MM-DD') == $ctrl.today.format('YYYY-MM-DD'),
+                  selected: day.date.format('YYYY-MM-DD') == $ctrl.selected.format('YYYY-MM-DD') && day.status,
+                  inRange : day.inRange}"
+                  ng-repeat="day in $ctrl.calendar.days">{{day.day}}</span>
+        </div>
+    </div>
+    <div class="datetime-time">
+        <div class="datetime-show-time">{{$ctrl.showTime()}}</div>
+        <div class="datetime-hours"><label>Hours:</label><input type="range" min="0" max="23" ng-model="$ctrl.hours" ng-change="$ctrl.updateTime()"/></div>
+        <div class="datetime-minutes"><label>Minutes:</label><input type="range" min="0" max="59" ng-model="$ctrl.minutes" ng-change="$ctrl.updateTime()"/></div>
+    </div>
+
+    <div class="preselected-ranges">
+        <div>
+            <a href="" ng-click="$ctrl.preselectMonth('this')">This month</a>
+            <a href="" ng-click="$ctrl.preselectMonth('last')">Last month</a>
+            <a href="" ng-click="$ctrl.preselectMonth('next')">Next month</a>
+        </div>
+        <div>
+            <a href="" ng-click="$ctrl.preselectWeek('this')">This week</a>
+            <a href="" ng-click="$ctrl.preselectWeek('last')">Last week</a>
+            <a href="" ng-click="$ctrl.preselectWeek('next')">Next week</a>
+        </div>
+
+    </div>
+
+    <div class="_apply">
+        <a href="" ng-click="$ctrl.apply()">Apply</a>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="_form-field" ng-class="{'on-element' : $ctrl.onElement}">
+
+    <biz-form-field
+            title="{{$ctrl.title}}"
+            for="{{$ctrl.for}}">
+        <input id="{{$ctrl.for}}"
+               type="$ctrl.type || 'text'"
+               ng-model="$ctrl.date"
+               name="{{$ctrl.for}}"
+               placeholder="{{$ctrl.placeholder}}"
+               ng-click="$ctrl.open()"
+               ng-required="$ctrl.required"/>
+    </biz-form-field>
+
+    <ng-transclude type="$ctrl.type || 'text'" ng-click="$ctrl.open()"></ng-transclude>
+
+</div>

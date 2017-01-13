@@ -1,0 +1,45 @@
+{
+  "name": "database-board",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "npm run dev",
+    "serve": "npm run dev && NODE_ENV=development gulp serve",
+    "backup-api": "npm run backup && NODE_ENV=backup gulp serve",
+    "dev": "NODE_ENV=development gulp",
+    "backup": "NODE_ENV=backup gulp",
+    "release": "NODE_ENV=production gulp",
+    "release-api2": "NODE_ENV=production BACKUP_API=true gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "del": "^2.2.2",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-environments": "^0.1.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-ng-html2js": "^0.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
+    "lodash": "^4.16.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "",
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-ui-router": "^1.0.0-beta.2",
+    "bootstrap": "^4.0.0-alpha.4",
+    "font-awesome": "^4.6.3",
+    "gulp-ng-constant": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglifycss": "^1.0.6",
+    "moment": "^2.15.1",
+    "moment-range": "^2.2.0"
+  }
+}

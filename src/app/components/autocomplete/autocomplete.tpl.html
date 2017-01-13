@@ -1,0 +1,27 @@
+<div class="autocomplete">
+    <biz-form-field
+            title="{{$ctrl.title}}"
+            for="{{$ctrl.for}}">
+        <input id="{{$ctrl.for}}" type="text"
+               placeholder="{{$ctrl.title}}"
+               ng-model="$ctrl.searchText"
+               name="{{$ctrl.for}}"
+               ng-required="$ctrl.required"
+               ng-focus="$ctrl.focus()"
+               ng-blur="$ctrl.blur()"
+               ng-change="$ctrl.search()"
+               ng-model-options="{ debounce: 300 }"/>
+    </biz-form-field>
+    <div class="autocomplete-results" ng-show="$ctrl.settings.visible && $ctrl.list.length && $ctrl.searchText">
+        <div class="results-list" ng-show="!$ctrl.settings.static && $ctrl.list.length">
+            <div class="result-item" ng-repeat="item in $ctrl.list" ng-click="$ctrl.select(item)">
+                {{$ctrl.settings.show(item)}}
+            </div>
+        </div>
+        <div class="results-list static" ng-show="$ctrl.settings.static && $ctrl.settings.visible && $ctrl.searchText">
+            <div class="result-item" ng-repeat="item in $ctrl.list | filter:$ctrl.searchText" ng-click="$ctrl.select(item)">
+                {{$ctrl.settings.show(item)}}
+            </div>
+        </div>
+    </div>
+</div>
