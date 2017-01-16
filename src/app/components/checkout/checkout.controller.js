@@ -31,7 +31,7 @@
             checkoutService.booking(checkout.data.data).then(function (pnr, i) {
               angular.forEach(pnr.data.data, function (p, i) {
                 checkoutService.book(ctrl.passengersArr[i], checkout.data.data.biz_locator, p.id).then(function (_r) {
-                  debugger;
+                  console.log('::: SUCCESS :::');
                 });
               });
             })
