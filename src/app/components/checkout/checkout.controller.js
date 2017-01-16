@@ -27,7 +27,6 @@
             flight : [ctrl.flight.id],
             seats : ctrl.search.seats
           }).then(function (checkout) {
-            console.log('checkout', checkout);
             checkoutService.booking(checkout.data.data).then(function (pnr, i) {
               angular.forEach(pnr.data.data, function (p, i) {
                 checkoutService.book(ctrl.passengersArr[i], checkout.data.data.biz_locator, p.id).then(function (_r) {
@@ -44,3 +43,13 @@
       })
     }
 })();
+
+
+/*
+ * Disabled user field missed true/false
+ * * Result page
+ * Flight type has to be preselected
+ *
+ * Show departure_at field when Empty-leg/Full-charter on checkout page and hide Passenger info;
+ * ONLY For empty leg show available_from/to on result page
+ */

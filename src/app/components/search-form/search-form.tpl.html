@@ -49,7 +49,7 @@
     </biz-dropdown-select>
   </div>
 
-  <div class="seats-counter">
+  <div class="seats-counter" ng-if="$ctrl.data.flight_type == 'shuttle'">
     <a ng-click="$ctrl.count(false)">-</a>
     <input type="number" ng-model="$ctrl.data.seats">
     <a ng-click="$ctrl.count(true)">+</a>

@@ -1166,7 +1166,8 @@ output {
   .search-form .airports {
     display: flex; }
     .search-form .airports .airport-input {
-      position: relative; }
+      position: relative;
+      padding: 0 15px; }
       .search-form .airports .airport-input i {
         position: absolute;
         line-height: 40px;
@@ -1205,7 +1206,8 @@ output {
           transition-duration: .3s;
           text-transform: none; }
   .search-form .date-selector {
-    position: relative; }
+    position: relative;
+    padding: 0 15px; }
     .search-form .date-selector i {
       position: absolute;
       line-height: 40px;
@@ -1255,9 +1257,11 @@ output {
       .search-form .find-button:hover a {
         color: #fff; }
   .search-form .flight-type {
-    width: 150px; }
+    width: 150px;
+    padding: 0 15px; }
   .search-form .seats-counter {
-    display: flex; }
+    display: flex;
+    padding: 0 15px; }
     .search-form .seats-counter input {
       width: 46px;
       text-align: center;

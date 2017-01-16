@@ -207,22 +207,6 @@ try {
   module = angular.module('templates', []);
 }
 module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('components/main/main.tpl.html',
-    '<!--<header-cmp></header-cmp>-->\n' +
-    '<div class="_main-screen">\n' +
-    '  <search-form></search-form>\n' +
-    '</div>\n' +
-    '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('templates');
-} catch (e) {
-  module = angular.module('templates', []);
-}
-module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/form-field/form-field.tpl.html',
     '<ng-form name="$ctrl.formFieldForm" novalidate>\n' +
     '    <div class="form-group" ng-class="{\'small\': $ctrl.small,\'has-error\': ($ctrl.formFieldForm.$$parentForm.$submitted || $ctrl.formFieldForm[$ctrl.for].$dirty) && $ctrl.formFieldForm[$ctrl.for].$invalid}">\n' +
@@ -247,6 +231,22 @@ module.run(['$templateCache', function($templateCache) {
     '        </div>\n' +
     '    </div>\n' +
     '</ng-form>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/main/main.tpl.html',
+    '<!--<header-cmp></header-cmp>-->\n' +
+    '<div class="_main-screen">\n' +
+    '  <search-form></search-form>\n' +
+    '</div>\n' +
+    '');
 }]);
 })();
 
@@ -309,7 +309,7 @@ module.run(['$templateCache', function($templateCache) {
     '    </biz-dropdown-select>\n' +
     '  </div>\n' +
     '\n' +
-    '  <div class="seats-counter">\n' +
+    '  <div class="seats-counter" ng-if="$ctrl.data.flight_type == \'shuttle\'">\n' +
     '    <a ng-click="$ctrl.count(false)">-</a>\n' +
     '    <input type="number" ng-model="$ctrl.data.seats">\n' +
     '    <a ng-click="$ctrl.count(true)">+</a>\n' +

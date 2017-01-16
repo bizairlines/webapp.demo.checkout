@@ -29,6 +29,7 @@
     .airport-input {
 
       position: relative;
+      padding: 0 15px;
 
       i {
         position: absolute;
@@ -83,6 +84,7 @@
   .date-selector {
 
     position: relative;
+    padding: 0 15px;
 
     i {
       position: absolute;
@@ -148,10 +150,12 @@
 
   .flight-type {
     width: 150px;
+    padding: 0 15px;
   }
 
   .seats-counter {
     display: flex;
+    padding: 0 15px;
 
     input {
       width: 46px;
