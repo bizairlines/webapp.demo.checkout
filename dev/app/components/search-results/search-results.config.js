@@ -2,7 +2,7 @@
   'use strict';
 
   config.$inject = ["$stateProvider"];
-  resResolver.$inject = ["searchResultsService", "$stateParams"];
+  resResolver.$inject = ["searchResultsService", "$stateParams", "$state"];
   angular
     .module('main')
     .config(config);
@@ -27,9 +27,10 @@
   }
 
   /* ngInject */
-  function resResolver(searchResultsService, $stateParams) {
+  function resResolver(searchResultsService, $stateParams, $state) {
 
     var data = {};
+    if(!$stateParams.data) $state.go('main');
     data.from = $stateParams.data.from.iata_code;
     data.to = $stateParams.data.to.iata_code;
     data.date = $stateParams.data.date;

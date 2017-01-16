@@ -2,123 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea1a3ad6-66b5-48f2-83fd-e85b5713fb78" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/dropdown-select/dropdown-select.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/dropdown-select/dropdown-select.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/dropdown-select/dropdown-select.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/dropdown-select/dropdown-select.tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/form-field/form-field.component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/form-field/form-field.module.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/form-field/form-field.tpl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/search-results/search-results.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_checkout.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_dropdown-select.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/images/bg.jpeg" afterPath="$PROJECT_DIR$/dev/images/bg.jpeg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/images/bg.jpeg" afterPath="$PROJECT_DIR$/src/assets/images/bg.jpeg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.editorconfig" afterPath="$PROJECT_DIR$/.editorconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/checkout-demo.iml" afterPath="$PROJECT_DIR$/.idea/checkout-demo.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/components/search-results/search-results.const.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/dev.json" afterPath="$PROJECT_DIR$/config/dev.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/example.env.json" afterPath="$PROJECT_DIR$/config/example.env.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/prod.json" afterPath="$PROJECT_DIR$/config/prod.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/app.config.js" afterPath="$PROJECT_DIR$/dev/app/app.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/app.constants.js" afterPath="$PROJECT_DIR$/dev/app/app.constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/app.module.js" afterPath="$PROJECT_DIR$/dev/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/app.run.js" afterPath="$PROJECT_DIR$/dev/app/app.run.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.component.js" afterPath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.constant.js" afterPath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.constant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.module.js" afterPath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.service.js" afterPath="$PROJECT_DIR$/dev/app/components/autocomplete/autocomplete.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/datetime/datetime-view/datetime-view.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/datetime/datetime-view/datetime-view.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/datetime/datetime-view/datetime-view.module.js" afterPath="$PROJECT_DIR$/dev/app/components/datetime/datetime-view/datetime-view.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/datetime/datetime-view/datetime-view.service.js" afterPath="$PROJECT_DIR$/dev/app/components/datetime/datetime-view/datetime-view.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/datetime/datetime.component.js" afterPath="$PROJECT_DIR$/dev/app/components/datetime/datetime.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/datetime/datetime.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/datetime/datetime.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/datetime/datetime.module.js" afterPath="$PROJECT_DIR$/dev/app/components/datetime/datetime.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/main/main.config.js" afterPath="$PROJECT_DIR$/dev/app/components/main/main.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/main/main.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/main/main.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/main/main.module.js" afterPath="$PROJECT_DIR$/dev/app/components/main/main.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-form/search-form.component.js" afterPath="$PROJECT_DIR$/dev/app/components/search-form/search-form.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-form/search-form.constatns.js" afterPath="$PROJECT_DIR$/dev/app/components/search-form/search-form.constatns.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-form/search-form.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/search-form/search-form.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-form/search-form.module.js" afterPath="$PROJECT_DIR$/dev/app/components/search-form/search-form.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/checkout/checkout.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/checkout/checkout.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-results/search-results.config.js" afterPath="$PROJECT_DIR$/dev/app/components/search-results/search-results.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-results/search-results.const.js" afterPath="$PROJECT_DIR$/dev/app/components/search-results/search-results.const.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-results/search-results.controller.js" afterPath="$PROJECT_DIR$/dev/app/components/search-results/search-results.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/components/search-results/search-results.module.js" afterPath="$PROJECT_DIR$/dev/app/components/search-results/search-results.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/layouts/header/header.component.js" afterPath="$PROJECT_DIR$/dev/app/layouts/header/header.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/layouts/header/header.controller.js" afterPath="$PROJECT_DIR$/dev/app/layouts/header/header.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/layouts/header/header.module.js" afterPath="$PROJECT_DIR$/dev/app/layouts/header/header.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/layouts/layoutes.module.js" afterPath="$PROJECT_DIR$/dev/app/layouts/layoutes.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/app/templates.js" afterPath="$PROJECT_DIR$/dev/app/templates.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/index.html" afterPath="$PROJECT_DIR$/dev/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/stylesheets/app.css" afterPath="$PROJECT_DIR$/dev/stylesheets/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/vendors/vendor.js" afterPath="$PROJECT_DIR$/dev/vendors/vendor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulp.config.js" afterPath="$PROJECT_DIR$/gulp.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.config.js" afterPath="$PROJECT_DIR$/src/app/app.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.constants.js" afterPath="$PROJECT_DIR$/src/app/app.constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.js" afterPath="$PROJECT_DIR$/src/app/app.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.run.js" afterPath="$PROJECT_DIR$/src/app/app.run.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.component.js" afterPath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.constant.js" afterPath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.constant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.controller.js" afterPath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.module.js" afterPath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.service.js" afterPath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.tpl.html" afterPath="$PROJECT_DIR$/src/app/components/autocomplete/autocomplete.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.controller.js" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.module.js" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.service.js" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.tpl.html" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime-view/datetime-view.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime.component.js" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime.controller.js" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime.module.js" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/datetime/datetime.tpl.html" afterPath="$PROJECT_DIR$/src/app/components/datetime/datetime.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/main/main.config.js" afterPath="$PROJECT_DIR$/src/app/components/main/main.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/main/main.controller.js" afterPath="$PROJECT_DIR$/src/app/components/main/main.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/main/main.module.js" afterPath="$PROJECT_DIR$/src/app/components/main/main.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/main/main.tpl.html" afterPath="$PROJECT_DIR$/src/app/components/main/main.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-form/search-form.component.js" afterPath="$PROJECT_DIR$/src/app/components/search-form/search-form.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-form/search-form.constatns.js" afterPath="$PROJECT_DIR$/src/app/components/search-form/search-form.constatns.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-form/search-form.controller.js" afterPath="$PROJECT_DIR$/src/app/components/search-form/search-form.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-form/search-form.module.js" afterPath="$PROJECT_DIR$/src/app/components/search-form/search-form.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-form/search-form.tpl.html" afterPath="$PROJECT_DIR$/src/app/components/search-form/search-form.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js" afterPath="$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-results/search-results.config.js" afterPath="$PROJECT_DIR$/src/app/components/search-results/search-results.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-results/search-results.const.js" afterPath="$PROJECT_DIR$/src/app/components/search-results/search-results.const.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js" afterPath="$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-results/search-results.module.js" afterPath="$PROJECT_DIR$/src/app/components/search-results/search-results.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/components/search-results/search-results.tpl.html" afterPath="$PROJECT_DIR$/src/app/components/search-results/search-results.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layouts/header/header.component.js" afterPath="$PROJECT_DIR$/src/app/layouts/header/header.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layouts/header/header.controller.js" afterPath="$PROJECT_DIR$/src/app/layouts/header/header.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layouts/header/header.module.js" afterPath="$PROJECT_DIR$/src/app/layouts/header/header.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layouts/header/header.tpl.html" afterPath="$PROJECT_DIR$/src/app/layouts/header/header.tpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layouts/layoutes.module.js" afterPath="$PROJECT_DIR$/src/app/layouts/layoutes.module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/_global.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/_global.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/_mixins.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/_mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/_structure.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/_structure.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/_utilits.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/_utilits.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/_variables.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/_variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/components/_autocomplete.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_autocomplete.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/components/_datetime.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_datetime.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/components/_search-form.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_search-form.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/components/_search-results.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/components/_search-results.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/main.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/mixins/_border-radius.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/mixins/_border-radius.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/mixins/_box-shadow.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/mixins/_box-shadow.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/stylesheets/mixins/_vendor-prefixer.scss" afterPath="$PROJECT_DIR$/src/assets/stylesheets/mixins/_vendor-prefixer.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -162,8 +54,8 @@
       <file leaf-file-name="checkout.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
+            <state relative-caret-position="165">
+              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -179,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search-results.const.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/search-results/search-results.const.js">
+      <file leaf-file-name="search-results.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="50" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="50" />
+            <state relative-caret-position="180">
+              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -209,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search-results.config.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search-results.config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/search-results/search-results.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="369">
+              <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -244,6 +136,7 @@
       <find>_at</find>
       <find>biz-dropdown-select</find>
       <find>booking</find>
+      <find>FLIGHTS</find>
     </findStrings>
     <replaceStrings>
       <replace>API</replace>
@@ -302,13 +195,13 @@
         <option value="$PROJECT_DIR$/src/app/app.module.js" />
         <option value="$PROJECT_DIR$/src/app/components/search-form/search-form.service.js" />
         <option value="$PROJECT_DIR$/src/app/components/search-form/search-form.tpl.html" />
-        <option value="$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js" />
         <option value="$PROJECT_DIR$/src/app/components/search-results/search-results.service.js" />
         <option value="$PROJECT_DIR$/src/app/components/search-form/search-form.constatns.js" />
         <option value="$PROJECT_DIR$/src/app/components/checkout/checkout.service.js" />
-        <option value="$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js" />
         <option value="$PROJECT_DIR$/src/app/components/checkout/checkout.tpl.html" />
+        <option value="$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js" />
         <option value="$PROJECT_DIR$/src/app/components/search-results/search-results.config.js" />
+        <option value="$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js" />
       </list>
     </option>
   </component>
@@ -620,12 +513,12 @@
       <updated>1484298499520</updated>
       <workItem from="1484298502496" duration="1143000" />
       <workItem from="1484299651930" duration="12156000" />
-      <workItem from="1484510383404" duration="15779000" />
+      <workItem from="1484510383404" duration="16118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29078000" />
+    <option name="totallyTimeSpent" value="29417000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="133" y="23" width="1280" height="872" extended-state="0" />
@@ -978,14 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="74" lean-forward="true" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/search-form/search-form.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1006,14 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="43" lean-forward="false" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/search-form/search-form.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1042,18 +919,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/checkout/checkout.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/search-form/search-form.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1066,10 +943,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/checkout/checkout.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/search-results/search-results.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        <state relative-caret-position="369">
+          <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/search-results/search-results.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>

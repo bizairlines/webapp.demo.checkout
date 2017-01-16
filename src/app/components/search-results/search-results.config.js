@@ -25,9 +25,10 @@
   }
 
   /* ngInject */
-  function resResolver(searchResultsService, $stateParams) {
+  function resResolver(searchResultsService, $stateParams, $state) {
 
     var data = {};
+    if(!$stateParams.data) $state.go('main');
     data.from = $stateParams.data.from.iata_code;
     data.to = $stateParams.data.to.iata_code;
     data.date = $stateParams.data.date;

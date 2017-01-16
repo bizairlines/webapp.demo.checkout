@@ -6,8 +6,10 @@
         .controller('CheckoutController', CheckoutController);
 
     /* ngInject */
-    function CheckoutController(checkoutService, $stateParams) {
+    function CheckoutController(checkoutService, $state, $stateParams) {
       var ctrl = this;
+
+      if(!$stateParams.search || !$stateParams.data) $state.go('main');
 
       ctrl.search = $stateParams.search;
       ctrl.flight = $stateParams.data;
