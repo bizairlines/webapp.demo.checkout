@@ -1,0 +1,92 @@
+<div class="checkout">
+  <div class="checkout-forms">
+
+    <div class="credit-card-form">
+      <!--: $exp_month-->
+      <!--: $exp_year-->
+      <!--cvc: $cvv-->
+
+      <biz-form-field
+        title="Card number" for="number"
+        no-validation="true"
+        small="true">
+        <input type="text" ng-model="$ctrl.cc.number" ui-mask="9999 9999 9999 9999">
+      </biz-form-field>
+
+      <biz-form-field
+        title="Expiration month" for="expiration_month"
+        no-validation="true"
+        small="true">
+        <select ng-model="$ctrl.cc.expiration_month">
+          <option value="{{$index+1}}" ng-repeat="m in $ctrl.months">{{m}}</option>
+        </select>
+      </biz-form-field>
+
+      <biz-form-field
+        title="Expiration year" for="expiration_year"
+        no-validation="true"
+        small="true">
+        <input type="text" ng-model="$ctrl.cc.expiration_year" maxlength="">
+      </biz-form-field>
+
+      <biz-form-field
+        title="CVV" for="cvc"
+        no-validation="true"
+        small="true">
+        <input type="text" ng-model="$ctrl.cc.cvc" maxlength="4">
+      </biz-form-field>
+
+    </div>
+
+    <div class="_form" ng-repeat="f in $ctrl.passengersArr track by $index">
+      <h3>Passenger #{{$index+1}}</h3>
+
+      <biz-form-field
+      title="Name" for="name"
+      no-validation="true"
+      small="true">
+        <input type="text" ng-model="$ctrl.passengersArr[$index].name">
+      </biz-form-field>
+
+      <biz-form-field
+      title="Birthdate" for="birthdate"
+      small="true">
+        <biz-datetime model="$ctrl.passengersArr[$index].birthdate" type="date" format="YYYY-MM-DD"></biz-datetime>
+      </biz-form-field>
+
+      <biz-form-field
+      title="Gender" for="gender"
+      small="true">
+        <select name="gender" id="gender" ng-model="$ctrl.passengersArr[$index].gender">
+          <option value="null">Select...</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </biz-form-field>
+
+      <biz-form-field
+        title="Email" for="email"
+        no-validation="true"
+        small="true">
+        <input type="email" ng-model="$ctrl.passengersArr[$index].email">
+      </biz-form-field>
+
+      <biz-form-field
+        title="Passport" for="passport"
+        no-validation="true"
+        small="true">
+        <input type="text" ng-model="$ctrl.passengersArr[$index].passport">
+      </biz-form-field>
+
+      <biz-autocomplete title="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>
+
+      <biz-form-field
+        title="Passport expiration" for="passport_expiration"
+        small="true">
+        <biz-datetime model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM-DD"></biz-datetime>
+      </biz-form-field>
+    </div>
+
+    <button ng-click="$ctrl.checkout()">Purchase</button>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+.button-group {
+  width: 100%;
+}
+.link{
+  color: #005a73;
+  text-decoration: underline;
+}
+.btn {
+  display: inline-block;
+  min-width: 100px;
+  height: 44px;
+  font-weight: 400;
+  line-height: 1.75;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 14px;
+  @include border-radius(.25rem);
+  text-transform: uppercase;
+  box-sizing: border-box;
+
+  &.btn-simple {
+    color: #aaaaaa;
+    @include border-radius(2px);
+    background: none;
+    text-decoration: underline;
+  }
+
+  &.btn-empty-gray {
+    font-family: Museo;
+    font-weight: 300;
+    font-size: 16px;
+    color: #666666;
+    background-color: transparent;
+    text-transform: capitalize;
+  }
+
+  &.btn-clear {
+    background-color: transparent;
+    color: $lightBlue !important;
+    @include border-radius(2px);
+    border-color: $lightBlue;
+
+    &.small {
+      @include border-radius(2px);
+      border: solid 1px $lightBlue;
+      font-size: 14px;
+      padding: 7.5px 13px;
+      line-height: 14px;
+      min-width: 45px;
+    }
+  }
+
+  &.btn-border {
+    color: $lightBlue;//
+    @include border-radius(2px);
+    background: none;
+    text-decoration: none;
+    border: 1px solid $lightBlue;
+    text-transform: capitalize;
+    min-width: unset;
+  }
+
+  &.btn-border-2 {
+    color: $lightBlue;
+    @include border-radius(2px);
+    background: none;
+    text-decoration: none;
+    border: 2px solid $lightBlue;
+    text-transform: capitalize;
+    min-width: unset;
+    display: inline;
+  }
+
+  &.btn-border-grey {
+    color: $darkGray;//
+    @include border-radius(2px);
+    background: none;
+    text-decoration: none;
+    border: 1px solid $darkGray;
+    text-transform: capitalize;
+    min-width: unset;
+  }
+
+  &.btn-primary {
+    color: #ffffff !important;
+    @include border-radius(2px);
+    background-color: #01aabe;
+
+    &._thin {
+      font-weight: 300;
+    }
+  }
+
+  &.btn-warning {
+    color: #ffffff;
+    @include border-radius(2px);
+    background-color: red;
+  }
+
+  &.btn-special {
+    color: #ffffff;
+    @include border-radius(2px);
+    background-color: #2ecc71;
+  }
+
+  &.disabled, &[disabled="disabled"] {
+    @include border-radius(2px);
+    background-color: transparent !important;
+    border: 2px solid #d8d8d8 !important;
+    color: #d8d8d8 !important;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  &.small {
+    height: 36px;
+    line-height: 32px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.tiny {
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  &.align-button-right {
+    margin-top: 15px;
+    float: right;
+  }
+
+  &.without-border-radius {
+    @include border-radius(0);
+  }
+
+  &:active {
+    @include shadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.25), true);
+
+    &.btn-simple {
+      box-shadow: none;
+    }
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

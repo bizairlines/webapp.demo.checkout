@@ -6,9 +6,13 @@
         .controller('SearchResultController', SearchResultController);
 
     /* ngInject */
-    function SearchResultController(FLIGHTS) {
+    function SearchResultController($state, $stateParams, searchResultsService) {
         var ctrl = this;
+        ctrl.flights = searchResultsService.get();
+        ctrl.select = select;
 
-        ctrl.flights = FLIGHTS.data;
+        function select(item) {
+          $state.go('checkout', {data : item, search: $stateParams.data});
+        }
     }
 })();

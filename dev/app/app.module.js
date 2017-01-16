@@ -7,5 +7,9 @@ angular
         'search-form',
         'autocomplete',
         'search-results',
-        'main'
+        'main',
+        'dropdown-select',
+        'checkout',
+        'form-field',
+        'ui.mask'
     ]);

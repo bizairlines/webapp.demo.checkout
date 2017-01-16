@@ -44,6 +44,110 @@ try {
   module = angular.module('templates', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/checkout/checkout.tpl.html',
+    '<div class="checkout">\n' +
+    '  <div class="checkout-forms">\n' +
+    '\n' +
+    '    <div class="credit-card-form">\n' +
+    '      <!--: $exp_month-->\n' +
+    '      <!--: $exp_year-->\n' +
+    '      <!--cvc: $cvv-->\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="Card number" for="number"\n' +
+    '        no-validation="true"\n' +
+    '        small="true">\n' +
+    '        <input type="text" ng-model="$ctrl.cc.number" ui-mask="9999 9999 9999 9999">\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="Expiration month" for="expiration_month"\n' +
+    '        no-validation="true"\n' +
+    '        small="true">\n' +
+    '        <select ng-model="$ctrl.cc.expiration_month">\n' +
+    '          <option value="{{$index+1}}" ng-repeat="m in $ctrl.months">{{m}}</option>\n' +
+    '        </select>\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="Expiration year" for="expiration_year"\n' +
+    '        no-validation="true"\n' +
+    '        small="true">\n' +
+    '        <input type="text" ng-model="$ctrl.cc.expiration_year" maxlength="">\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="CVV" for="cvc"\n' +
+    '        no-validation="true"\n' +
+    '        small="true">\n' +
+    '        <input type="text" ng-model="$ctrl.cc.cvc" maxlength="4">\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <div class="_form" ng-repeat="f in $ctrl.passengersArr track by $index">\n' +
+    '      <h3>Passenger #{{$index+1}}</h3>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '      title="Name" for="name"\n' +
+    '      no-validation="true"\n' +
+    '      small="true">\n' +
+    '        <input type="text" ng-model="$ctrl.passengersArr[$index].name">\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '      title="Birthdate" for="birthdate"\n' +
+    '      small="true">\n' +
+    '        <biz-datetime model="$ctrl.passengersArr[$index].birthdate" type="date" format="YYYY-MM-DD"></biz-datetime>\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '      title="Gender" for="gender"\n' +
+    '      small="true">\n' +
+    '        <select name="gender" id="gender" ng-model="$ctrl.passengersArr[$index].gender">\n' +
+    '          <option value="null">Select...</option>\n' +
+    '          <option value="M">Male</option>\n' +
+    '          <option value="F">Female</option>\n' +
+    '        </select>\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="Email" for="email"\n' +
+    '        no-validation="true"\n' +
+    '        small="true">\n' +
+    '        <input type="email" ng-model="$ctrl.passengersArr[$index].email">\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="Passport" for="passport"\n' +
+    '        no-validation="true"\n' +
+    '        small="true">\n' +
+    '        <input type="text" ng-model="$ctrl.passengersArr[$index].passport">\n' +
+    '      </biz-form-field>\n' +
+    '\n' +
+    '      <biz-autocomplete title="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>\n' +
+    '\n' +
+    '      <biz-form-field\n' +
+    '        title="Passport expiration" for="passport_expiration"\n' +
+    '        small="true">\n' +
+    '        <biz-datetime model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM-DD"></biz-datetime>\n' +
+    '      </biz-form-field>\n' +
+    '    </div>\n' +
+    '\n' +
+    '    <button ng-click="$ctrl.checkout()">Purchase</button>\n' +
+    '  </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/datetime/datetime.tpl.html',
     '<div class="_form-field" ng-class="{\'on-element\' : $ctrl.onElement}">\n' +
     '\n' +
@@ -63,6 +167,70 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '</div>\n' +
     '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/dropdown-select/dropdown-select.tpl.html',
+    '<div class="dropdown-select-container" ng-click="$ctrl.trigger()">\n' +
+    '    <div class="form-group" ng-class="{\'small\': $ctrl.small}">\n' +
+    '\n' +
+    '        <label>{{$ctrl.selected}}</label>\n' +
+    '\n' +
+    '        <div class="form-control">\n' +
+    '            <ul class="dropdown-select" ng-show="$ctrl.show">\n' +
+    '                <li ng-repeat="item in $ctrl.list" ng-click="$ctrl.select(item)">\n' +
+    '                    {{item.title}}\n' +
+    '                </li>\n' +
+    '            </ul>\n' +
+    '        </div>\n' +
+    '        <span class="_caret">\n' +
+    '            <i class="fa fa-caret-down" aria-hidden="true"></i>\n' +
+    '        </span>\n' +
+    '    </div>\n' +
+    '    <div class="_backdrop" ng-if="$ctrl.show"></div>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/form-field/form-field.tpl.html',
+    '<ng-form name="$ctrl.formFieldForm" novalidate>\n' +
+    '    <div class="form-group" ng-class="{\'small\': $ctrl.small,\'has-error\': ($ctrl.formFieldForm.$$parentForm.$submitted || $ctrl.formFieldForm[$ctrl.for].$dirty) && $ctrl.formFieldForm[$ctrl.for].$invalid}">\n' +
+    '        <label for="{{$ctrl.for}}" ng-show="$ctrl.title">{{$ctrl.title}}</label>\n' +
+    '\n' +
+    '        <div class="form-control" ng-transclude>\n' +
+    '\n' +
+    '        </div>\n' +
+    '        <div class="tip" ng-show="$ctrl.tip">\n' +
+    '            {{$ctrl.tip}}\n' +
+    '        </div>\n' +
+    '        <div class="units" ng-show="$ctrl.units">\n' +
+    '            {{$ctrl.units}}\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '    <div class="error-messages" ng-if="!$ctrl.noValidation">\n' +
+    '        <div ng-messages="$ctrl.formFieldForm[$ctrl.for].$error" role="alert" ng-show="($ctrl.formFieldForm.$$parentForm.$submitted || $ctrl.formFieldForm[$ctrl.for].$dirty) && $ctrl.formFieldForm[$ctrl.for].$invalid">\n' +
+    '            <div ng-message="pattern">Has to be valid year. Min year is 1990.</div>\n' +
+    '            <div ng-message="required">This is a required field</div>\n' +
+    '            <div ng-message="max">Cannot be more than amount of available seats</div>\n' +
+    '            <div ng-message="is_equal">Password is not the same</div>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</ng-form>');
 }]);
 })();
 
@@ -127,15 +295,28 @@ module.run(['$templateCache', function($templateCache) {
     '                  for="date"\n' +
     '                  model="$ctrl.data.date"\n' +
     '                  type="date"\n' +
-    '                  format="DD MMM"\n' +
+    '                  format="YYYY-MM-DD"\n' +
     '                  placeholder="Date..."\n' +
     '                  min="{{$ctrl.minDate}}">\n' +
     '    </biz-datetime>\n' +
-    '    <!--<input type="text" placeholder="Chose date...">-->\n' +
     '  </div>\n' +
     '\n' +
-    '  <div class="find-button">\n' +
-    '    <a href="#!">Search</a>\n' +
+    '  <div class="flight-type">\n' +
+    '    <biz-dropdown-select\n' +
+    '      model="$ctrl.data.flight_type"\n' +
+    '      list = \'$ctrl.types\' value="$ctrl.data.type">\n' +
+    '\n' +
+    '    </biz-dropdown-select>\n' +
+    '  </div>\n' +
+    '\n' +
+    '  <div class="seats-counter">\n' +
+    '    <a ng-click="$ctrl.count(false)">-</a>\n' +
+    '    <input type="number" ng-model="$ctrl.data.seats">\n' +
+    '    <a ng-click="$ctrl.count(true)">+</a>\n' +
+    '  </div>\n' +
+    '\n' +
+    '  <div class="find-button" ui-sref="results({data : $ctrl.data})">\n' +
+    '    <a>Search</a>\n' +
     '  </div>\n' +
     '\n' +
     '</div>\n' +
@@ -179,6 +360,10 @@ module.run(['$templateCache', function($templateCache) {
     '          <i class="fa fa-plane"></i>\n' +
     '          {{item.aircraft.aircraft.name}}\n' +
     '        </div>\n' +
+    '      </div>\n' +
+    '\n' +
+    '      <div class="flex-block-row align-center-v-h">\n' +
+    '        <a class="btn btn-primary _thin" ng-click="$ctrl.select(item)">Select</a>\n' +
     '      </div>\n' +
     '    </div>\n' +
     '  </div>\n' +

@@ -1,0 +1,18 @@
+<div class="dropdown-select-container" ng-click="$ctrl.trigger()">
+    <div class="form-group" ng-class="{'small': $ctrl.small}">
+
+        <label>{{$ctrl.selected}}</label>
+
+        <div class="form-control">
+            <ul class="dropdown-select" ng-show="$ctrl.show">
+                <li ng-repeat="item in $ctrl.list" ng-click="$ctrl.select(item)">
+                    {{item.title}}
+                </li>
+            </ul>
+        </div>
+        <span class="_caret">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </span>
+    </div>
+    <div class="_backdrop" ng-if="$ctrl.show"></div>
+</div>

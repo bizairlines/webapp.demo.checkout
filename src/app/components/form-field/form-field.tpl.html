@@ -1,0 +1,23 @@
+<ng-form name="$ctrl.formFieldForm" novalidate>
+    <div class="form-group" ng-class="{'small': $ctrl.small,'has-error': ($ctrl.formFieldForm.$$parentForm.$submitted || $ctrl.formFieldForm[$ctrl.for].$dirty) && $ctrl.formFieldForm[$ctrl.for].$invalid}">
+        <label for="{{$ctrl.for}}" ng-show="$ctrl.title">{{$ctrl.title}}</label>
+
+        <div class="form-control" ng-transclude>
+
+        </div>
+        <div class="tip" ng-show="$ctrl.tip">
+            {{$ctrl.tip}}
+        </div>
+        <div class="units" ng-show="$ctrl.units">
+            {{$ctrl.units}}
+        </div>
+    </div>
+    <div class="error-messages" ng-if="!$ctrl.noValidation">
+        <div ng-messages="$ctrl.formFieldForm[$ctrl.for].$error" role="alert" ng-show="($ctrl.formFieldForm.$$parentForm.$submitted || $ctrl.formFieldForm[$ctrl.for].$dirty) && $ctrl.formFieldForm[$ctrl.for].$invalid">
+            <div ng-message="pattern">Has to be valid year. Min year is 1990.</div>
+            <div ng-message="required">This is a required field</div>
+            <div ng-message="max">Cannot be more than amount of available seats</div>
+            <div ng-message="is_equal">Password is not the same</div>
+        </div>
+    </div>
+</ng-form>

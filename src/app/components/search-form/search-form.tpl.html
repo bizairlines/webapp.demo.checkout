@@ -35,15 +35,28 @@
                   for="date"
                   model="$ctrl.data.date"
                   type="date"
-                  format="DD MMM"
+                  format="YYYY-MM-DD"
                   placeholder="Date..."
                   min="{{$ctrl.minDate}}">
     </biz-datetime>
-    <!--<input type="text" placeholder="Chose date...">-->
   </div>
 
-  <div class="find-button">
-    <a href="#!">Search</a>
+  <div class="flight-type">
+    <biz-dropdown-select
+      model="$ctrl.data.flight_type"
+      list = '$ctrl.types' value="$ctrl.data.type">
+
+    </biz-dropdown-select>
+  </div>
+
+  <div class="seats-counter">
+    <a ng-click="$ctrl.count(false)">-</a>
+    <input type="number" ng-model="$ctrl.data.seats">
+    <a ng-click="$ctrl.count(true)">+</a>
+  </div>
+
+  <div class="find-button" ui-sref="results({data : $ctrl.data})">
+    <a>Search</a>
   </div>
 
 </div>

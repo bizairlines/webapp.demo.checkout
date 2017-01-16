@@ -9,6 +9,12 @@
   function config($stateProvider) {
     $stateProvider.state('results', {
       url: '/results',
+      params : {
+        data : undefined
+      },
+      resolve : {
+        resResolver: resResolver
+      },
       views: {
         content: {
           controller: 'SearchResultController as $ctrl',
@@ -16,5 +22,16 @@
         }
       }
     });
+  }
+
+  /* ngInject */
+  function resResolver(searchResultsService, $stateParams) {
+
+    var data = {};
+    data.from = $stateParams.data.from.iata_code;
+    data.to = $stateParams.data.to.iata_code;
+    data.date = $stateParams.data.date;
+    data.flight_type = $stateParams.data.flight_type;
+    searchResultsService.sync(data);
   }
 })();
