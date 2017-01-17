@@ -55,7 +55,7 @@
 
         <div class="_passenger" ng-repeat="f in $ctrl.passengersArr track by $index">
 
-          <h5>Passenger #{{$index+1}} <span>Disabled? <biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher></span></h5>
+          <h5>Passenger #{{$index+1}} <span><biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher></span></h5>
 
           <biz-form-field
             no-validation="true"
