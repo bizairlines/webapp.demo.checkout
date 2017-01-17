@@ -14,7 +14,15 @@
       ctrl.search = $stateParams.search;
       ctrl.flight = $stateParams.data;
 
-      ctrl.months = Array.apply(0, Array(12)).map(function(_,i){return moment().month(i).format('MMM')});
+      ctrl.months = Array.apply(0, Array(12)).map(function(_,i){
+        var item = {};
+        item.title = moment().month(i).format('MMM')
+        item.value = moment().month(i).format('MM')
+
+        return item
+      });
+
+      ctrl.genderList = [{title : 'Male', value : 'M'}, {title : 'Female', value : 'F'}];
       ctrl.passengersArr = new Array(ctrl.search.seats || 1);
 
       ctrl.checkout = checkout;
@@ -29,7 +37,7 @@
               checkoutService.booking(checkout.data.data).then(function (pnr, i) {
                 angular.forEach(pnr.data.data, function (p, i) {
                   checkoutService.book(ctrl.passengersArr[i], checkout.data.data.biz_locator, p.id).then(function (_r) {
-                    console.log('::: SUCCESS :::');
+                    ctrl.showSuccessMessage = (pnr.data.data.length == i+1)
                   });
                 });
               })

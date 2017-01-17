@@ -8,7 +8,8 @@ angular
             list : '=',
             title: '@',
             type : '=',
-            value : '='
+            value : '=',
+            small : '='
         }
     });
 

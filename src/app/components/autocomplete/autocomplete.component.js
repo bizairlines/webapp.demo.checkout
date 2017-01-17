@@ -12,6 +12,7 @@
                 title: '@',
                 for: '@',
                 type: '@',
+                placeholder : '@',
                 required: '<'
             }
         });

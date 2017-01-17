@@ -1,11 +1,91 @@
 .checkout {
-  width: 90%;
+  width: 100%;
+  padding: 25px 5%;
   margin: 0 auto;
   height: 100%;
+  background-color: #fff;
+  overflow: auto;
 
   .checkout-forms {
-    background-color: #fff;
     min-height: 250px;
     height: 100%;
+
+    > div {
+      margin-bottom: 20px;
+    }
+
+    .credit-card-form {
+      max-width: 400px;
+
+      .card-number {
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .card-details {
+        .year {
+          padding: 0 10px;
+        }
+
+        .cvv {
+          min-width: 50px;
+          width: 50px;
+
+        }
+      }
+    }
+
+    input {
+      border-width: 0 0 1px 0 ;
+      border-radius: none;
+    }
+  }
+
+  .departure_at {
+    margin-bottom: 20px;
+    max-width: 400px;
+  }
+
+  .checkout-details {
+
+    padding: 15px 0;
+    border-bottom: 1px solid #f6f6f6;
+    margin-bottom: 15px;
+
+    h3 {
+      font-size: 20px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #00aabe;
+
+      ._date {
+        font-size: 14px;
+        color: gray;
+      }
+
+    }
+  }
+
+  .passengers-list {
+    padding: 0 30px;
+    width: 100%;
+
+    ._passenger {
+      margin-bottom: 15px;
+
+      h5 {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      biz-form-field, biz-autocomplete, biz-datetime, biz-dropdown-select {
+        margin-bottom: 15px;
+        display: block;
+      }
+    }
   }
 }

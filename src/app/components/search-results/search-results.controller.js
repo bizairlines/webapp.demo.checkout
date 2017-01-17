@@ -20,7 +20,7 @@
         ctrl.select = select;
 
         function select(item) {
-          $state.go('checkout', {data : item, search: $stateParams.data});
+          $state.go('checkout', {data : item, search: ctrl.search});
         }
     }
 })();

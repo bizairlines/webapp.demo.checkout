@@ -26,15 +26,15 @@
 
         <div class="flex-block-row align-space-between">
 
-          <div class="available">
+          <div class="available" ng-if="$ctrl.search.flight_type == 'empty-leg'">
         <span>
           <i class="fa fa-calendar-o" aria-hidden="true"></i>
-          {{ item.available_from || '10/10/2015'}}
+          {{ item.available_from}}
         </span>
             <span>to</span>
             <span>
           <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
-          {{item.available_to || '10/10/2016'}}</span>
+          {{item.available_to}}</span>
           </div>
 
           <div class="aircraft-name">

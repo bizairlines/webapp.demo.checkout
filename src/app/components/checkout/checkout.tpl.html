@@ -1,105 +1,90 @@
 <div class="checkout">
+
+  <div class="checkout-details">
+    <h3 class="from-to">
+      {{$ctrl.search.from.iata_code + ' ' + $ctrl.search.from.name }} - {{$ctrl.search.to.iata_code + ' ' + $ctrl.search.to.name }} <span class="_date">{{$ctrl.search.date}}</span>
+    </h3>
+  </div>
+
   <div class="checkout-forms">
     <div ng-if="$ctrl.showSuccessMessage">
       <div class="alert alert-success" ng-if="$ctrl.showSuccessMessage">Booking successfully done!</div>
     </div>
-    <div ng-if="!$ctrl.showSuccessMessage">
-      <div class="departure_at" ng-if="$ctrl.search.flight_type != 'shuttle'">
-        <biz-form-field title="Departure at">
-          <biz-datetime type="datetime" model="$ctrl.departure_at" format="YYYY-MM-DD HH:mm:ss"></biz-datetime>
-        </biz-form-field>
+    <div ng-if="!$ctrl.showSuccessMessage" class="flex-block-row">
+      <div class="flex-block-column">
+
+        <h3 class="_title">Credit card info</h3>
+
+        <div class="departure_at" ng-if="$ctrl.search.flight_type != 'shuttle'">
+            <biz-datetime type="datetime" model="$ctrl.departure_at" format="YYYY-MM-DD HH:mm:ss" placeholder="Departure at"></biz-datetime>
+        </div>
+
+        <div class="credit-card-form">
+
+          <biz-form-field
+            title="Card number" for="number"
+            no-validation="true"
+            small="true"
+            class="card-number">
+            <input type="text" ng-model="$ctrl.cc.number" ui-mask="9999 9999 9999 9999">
+          </biz-form-field>
+
+          <div class="card-details flex-block-row">
+
+            <biz-dropdown-select list="$ctrl.months" small="true" model="$ctrl.cc.expiration_month"></biz-dropdown-select>
+
+            <biz-form-field
+              title="Expiration year" for="expiration_year"
+              no-validation="true"
+              small="true" class="year">
+              <input type="text" ng-model="$ctrl.cc.expiration_year" ui-mask="9999">
+            </biz-form-field>
+
+            <biz-form-field
+              no-validation="true"
+              small="true" class="cvv">
+              <input type="text" placeholder="CVV" ng-model="$ctrl.cc.cvc" maxlength="4">
+            </biz-form-field>
+          </div>
+
+        </div>
       </div>
 
-      <div class="credit-card-form">
-        <biz-form-field
-          title="Card number" for="number"
-          no-validation="true"
-          small="true">
-          <input type="text" ng-model="$ctrl.cc.number" ui-mask="9999 9999 9999 9999">
-        </biz-form-field>
+      <div class="passengers-list flex-block-column" ng-if="$ctrl.search.flight_type == 'shuttle'">
+        <h3 class="_title">Passengers</h3>
 
-        <biz-form-field
-          title="Expiration month" for="expiration_month"
-          no-validation="true"
-          small="true">
-          <select ng-model="$ctrl.cc.expiration_month">
-            <option value="{{$index+1}}" ng-repeat="m in $ctrl.months">{{m}}</option>
-          </select>
-        </biz-form-field>
+        <div class="_passenger" ng-repeat="f in $ctrl.passengersArr track by $index">
 
-        <biz-form-field
-          title="Expiration year" for="expiration_year"
-          no-validation="true"
-          small="true">
-          <input type="text" ng-model="$ctrl.cc.expiration_year" maxlength="">
-        </biz-form-field>
+          <h5>Passenger #{{$index+1}} <span>Disabled? <biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher></span></h5>
 
-        <biz-form-field
-          title="CVV" for="cvc"
-          no-validation="true"
-          small="true">
-          <input type="text" ng-model="$ctrl.cc.cvc" maxlength="4">
-        </biz-form-field>
+          <biz-form-field
+            no-validation="true"
+            small="true">
+            <input type="text" placeholder="Name" ng-model="$ctrl.passengersArr[$index].name">
+          </biz-form-field>
+
+          <biz-datetime model="$ctrl.passengersArr[$index].birthdate" type="date" format="YYYY-MM-DD" placeholder="Birth date" small="true"></biz-datetime>
+          <biz-dropdown-select list="$ctrl.genderList" model="$ctrl.passengersArr[$index].gender"></biz-dropdown-select>
+
+          <biz-form-field
+            no-validation="true"
+            small="true">
+            <input type="email" ng-model="$ctrl.passengersArr[$index].email" placeholder="Email">
+          </biz-form-field>
+
+          <biz-form-field
+            no-validation="true"
+            small="true">
+            <input type="text" ng-model="$ctrl.passengersArr[$index].passport" placeholder="Passport">
+          </biz-form-field>
+
+          <biz-autocomplete placeholder="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>
+
+          <biz-datetime placeholder="Passport expiration" model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM"></biz-datetime>
+        </div>
 
       </div>
-
-      <div class="_form" ng-if="$ctrl.search.flight_type == 'shuttle'" ng-repeat="f in $ctrl.passengersArr track by $index">
-
-        <h3>Passenger #{{$index+1}}</h3>
-
-        <biz-form-field
-        title="Name" for="name"
-        no-validation="true"
-        small="true">
-          <input type="text" ng-model="$ctrl.passengersArr[$index].name">
-        </biz-form-field>
-
-        <biz-form-field
-        title="Birthdate" for="birthdate"
-        small="true">
-          <biz-datetime model="$ctrl.passengersArr[$index].birthdate" type="date" format="YYYY-MM-DD"></biz-datetime>
-        </biz-form-field>
-
-        <biz-form-field
-        title="Gender" for="gender"
-        small="true">
-          <select name="gender" id="gender" ng-model="$ctrl.passengersArr[$index].gender">
-            <option value="null">Select...</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-          </select>
-        </biz-form-field>
-
-        <biz-form-field
-          title="Email" for="email"
-          no-validation="true"
-          small="true">
-          <input type="email" ng-model="$ctrl.passengersArr[$index].email">
-        </biz-form-field>
-
-        <biz-form-field
-          title="Passport" for="passport"
-          no-validation="true"
-          small="true">
-          <input type="text" ng-model="$ctrl.passengersArr[$index].passport">
-        </biz-form-field>
-
-        <biz-autocomplete title="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>
-
-        <biz-form-field
-          title="Passport expiration" for="passport_expiration"
-          small="true">
-          <biz-datetime model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM-DD"></biz-datetime>
-        </biz-form-field>
-
-        <biz-form-field
-          title="User is disabled?" for="is_disabled_person"
-          small="true">
-          <biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher>
-        </biz-form-field>
-      </div>
-
-      <button ng-click="$ctrl.checkout()">Purchase</button>
     </div>
   </div>
+  <button ng-if="!$ctrl.showSuccessMessage" ng-click="$ctrl.checkout()" class="btn btn-primary">Purchase</button>
 </div>

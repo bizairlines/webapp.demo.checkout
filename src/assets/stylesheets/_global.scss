@@ -38,8 +38,20 @@ a:hover {
   color: $lightBlue;
 }
 
+._title{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #00aabe;
 
-::-webkit-input-placeholder {color:#fff;}
-::-moz-placeholder          {color:#fff;}/* Firefox 19+ */
-:-moz-placeholder           {color:#fff;}/* Firefox 18- */
-:-ms-input-placeholder      {color:#fff;}
+}
+
+
+//::-webkit-input-placeholder {color:#fff;}
+//::-moz-placeholder          {color:#fff;}/* Firefox 19+ */
+//:-moz-placeholder           {color:#fff;}/* Firefox 18- */
+//:-ms-input-placeholder      {color:#fff;}
