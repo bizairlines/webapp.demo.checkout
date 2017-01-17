@@ -4,4 +4,5 @@ dist/
 app.yaml
 .idea
 dev
-public
+dev/
+public/
