@@ -55,7 +55,7 @@
 
         <div class="_passenger" ng-repeat="f in $ctrl.passengersArr track by $index">
 
-          <h5>Passenger #{{$index+1}} <span><biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher></span></h5>
+          <h5>Passenger #{{$index+1}}</h5>
 
           <biz-form-field
             no-validation="true"
@@ -81,6 +81,10 @@
           <biz-autocomplete placeholder="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>
 
           <biz-datetime placeholder="Passport expiration" model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM"></biz-datetime>
+
+          <biz-form-field title="Disabled Person" small="true">
+            <biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher>
+          </biz-form-field>
         </div>
 
       </div>
