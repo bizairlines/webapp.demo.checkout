@@ -9,11 +9,15 @@
     /* ngInject */
     function SearchResultController($state, $stateParams, searchResultsService) {
         var ctrl = this;
+
         if(!$stateParams.data) {
           $state.go('main');
           return;
         }
         ctrl.flights = searchResultsService.get();
+
+        ctrl.search = $stateParams.data;
+
         ctrl.select = select;
 
         function select(item) {

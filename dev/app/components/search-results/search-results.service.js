@@ -20,7 +20,7 @@
       }
 
       function sync(p) {
-
+        list = [];
         return $http.get(API + '/search/', {params : p})
           .then(function (resp) {
           angular.extend(list, resp.data.data);

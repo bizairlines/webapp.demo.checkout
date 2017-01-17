@@ -5,6 +5,51 @@ try {
   module = angular.module('templates', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/aircraft-item/aircraft-item.tpl.html',
+    '<div class="aircraft" ng-class="{\'selected\': $ctrl.aircraft.selected}">\n' +
+    '    <div class="select-item checkbox" ng-if="$ctrl.selecting">\n' +
+    '        <input id="{{\'select_\' + $ctrl.specialKey}}"\n' +
+    '               type="checkbox"\n' +
+    '               name="{{\'select_\' + $ctrl.specialKey}}"\n' +
+    '               ng-click="$ctrl.select()"\n' +
+    '               ng-model="$ctrl.aircraft.selected"/>\n' +
+    '        <label for="{{\'select_\' + $ctrl.specialKey}}">&nbsp;</label>\n' +
+    '    </div>\n' +
+    '    <biz-photo-slider photos="$ctrl.aircraft.upload"></biz-photo-slider>\n' +
+    '    <div class="info flex flex-block-column">\n' +
+    '        <div class="header flex-block-row">\n' +
+    '            <h2>{{$ctrl.aircraft.aircraft.name}}</h2>\n' +
+    '            <h2>{{$ctrl.aircraft.registration_number}}</h2>\n' +
+    '            <h3>{{$ctrl.aircraft.aircraft.category || \'No category\'}} | {{$ctrl.aircraft.aircraft.manufacturer.name}}</h3>\n' +
+    '        </div>\n' +
+    '        <div class="content container-fluid flex" ng-if="!$ctrl.view || $ctrl.view == \'basic_info\'">\n' +
+    '            <div class="row no-h-padding">\n' +
+    '                <div class="amenities col-xs flex-block-row right-border">\n' +
+    '                    <div class="amount-of-seats"><span>{{$ctrl.aircraft.passenger_capacity}}</span> seats</div>\n' +
+    '                    <div ng-show="$ctrl.aircraft.has_entertainment"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>\n' +
+    '                    <div ng-show="$ctrl.aircraft.has_wifi"><i class="fa fa-wifi" aria-hidden="true"></i></div>\n' +
+    '                    <div ng-show="$ctrl.aircraft.has_power_outlet"><i class="fa fa-plug" aria-hidden="true"></i></div>\n' +
+    '                    <div ng-show="$ctrl.aircraft.has_laptop_seat"><i class="fa fa-laptop" aria-hidden="true"></i></div>\n' +
+    '                </div>\n' +
+    '                <div class="location col-xs-4 flex-block-column right-border">\n' +
+    '                    <div class="code"><i class="fa fa-map-marker" aria-hidden="true"></i>{{$ctrl.aircraft.airport.iata_code}}</div>\n' +
+    '                    <div>Base location</div>\n' +
+    '                </div>\n' +
+    '            </div>\n' +
+    '        </div>\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/autocomplete/autocomplete.tpl.html',
     '<div class="autocomplete">\n' +
     '    <biz-form-field\n' +
@@ -47,94 +92,107 @@ module.run(['$templateCache', function($templateCache) {
   $templateCache.put('components/checkout/checkout.tpl.html',
     '<div class="checkout">\n' +
     '  <div class="checkout-forms">\n' +
-    '\n' +
-    '    <div class="credit-card-form">\n' +
-    '      <!--: $exp_month-->\n' +
-    '      <!--: $exp_year-->\n' +
-    '      <!--cvc: $cvv-->\n' +
-    '\n' +
-    '      <biz-form-field\n' +
-    '        title="Card number" for="number"\n' +
-    '        no-validation="true"\n' +
-    '        small="true">\n' +
-    '        <input type="text" ng-model="$ctrl.cc.number" ui-mask="9999 9999 9999 9999">\n' +
-    '      </biz-form-field>\n' +
-    '\n' +
-    '      <biz-form-field\n' +
-    '        title="Expiration month" for="expiration_month"\n' +
-    '        no-validation="true"\n' +
-    '        small="true">\n' +
-    '        <select ng-model="$ctrl.cc.expiration_month">\n' +
-    '          <option value="{{$index+1}}" ng-repeat="m in $ctrl.months">{{m}}</option>\n' +
-    '        </select>\n' +
-    '      </biz-form-field>\n' +
-    '\n' +
-    '      <biz-form-field\n' +
-    '        title="Expiration year" for="expiration_year"\n' +
-    '        no-validation="true"\n' +
-    '        small="true">\n' +
-    '        <input type="text" ng-model="$ctrl.cc.expiration_year" maxlength="">\n' +
-    '      </biz-form-field>\n' +
-    '\n' +
-    '      <biz-form-field\n' +
-    '        title="CVV" for="cvc"\n' +
-    '        no-validation="true"\n' +
-    '        small="true">\n' +
-    '        <input type="text" ng-model="$ctrl.cc.cvc" maxlength="4">\n' +
-    '      </biz-form-field>\n' +
-    '\n' +
+    '    <div ng-if="$ctrl.showSuccessMessage">\n' +
+    '      <div class="alert alert-success" ng-if="$ctrl.showSuccessMessage">Booking successfully done!</div>\n' +
     '    </div>\n' +
+    '    <div ng-if="!$ctrl.showSuccessMessage">\n' +
+    '      <div class="departure_at" ng-if="$ctrl.search.flight_type != \'shuttle\'">\n' +
+    '        <biz-form-field title="Departure at">\n' +
+    '          <biz-datetime type="datetime" model="$ctrl.departure_at" format="YYYY-MM-DD HH:mm:ss"></biz-datetime>\n' +
+    '        </biz-form-field>\n' +
+    '      </div>\n' +
     '\n' +
-    '    <div class="_form" ng-repeat="f in $ctrl.passengersArr track by $index">\n' +
-    '      <h3>Passenger #{{$index+1}}</h3>\n' +
+    '      <div class="credit-card-form">\n' +
+    '        <biz-form-field\n' +
+    '          title="Card number" for="number"\n' +
+    '          no-validation="true"\n' +
+    '          small="true">\n' +
+    '          <input type="text" ng-model="$ctrl.cc.number" ui-mask="9999 9999 9999 9999">\n' +
+    '        </biz-form-field>\n' +
     '\n' +
-    '      <biz-form-field\n' +
-    '      title="Name" for="name"\n' +
-    '      no-validation="true"\n' +
-    '      small="true">\n' +
-    '        <input type="text" ng-model="$ctrl.passengersArr[$index].name">\n' +
-    '      </biz-form-field>\n' +
+    '        <biz-form-field\n' +
+    '          title="Expiration month" for="expiration_month"\n' +
+    '          no-validation="true"\n' +
+    '          small="true">\n' +
+    '          <select ng-model="$ctrl.cc.expiration_month">\n' +
+    '            <option value="{{$index+1}}" ng-repeat="m in $ctrl.months">{{m}}</option>\n' +
+    '          </select>\n' +
+    '        </biz-form-field>\n' +
     '\n' +
-    '      <biz-form-field\n' +
-    '      title="Birthdate" for="birthdate"\n' +
-    '      small="true">\n' +
-    '        <biz-datetime model="$ctrl.passengersArr[$index].birthdate" type="date" format="YYYY-MM-DD"></biz-datetime>\n' +
-    '      </biz-form-field>\n' +
+    '        <biz-form-field\n' +
+    '          title="Expiration year" for="expiration_year"\n' +
+    '          no-validation="true"\n' +
+    '          small="true">\n' +
+    '          <input type="text" ng-model="$ctrl.cc.expiration_year" maxlength="">\n' +
+    '        </biz-form-field>\n' +
     '\n' +
-    '      <biz-form-field\n' +
-    '      title="Gender" for="gender"\n' +
-    '      small="true">\n' +
-    '        <select name="gender" id="gender" ng-model="$ctrl.passengersArr[$index].gender">\n' +
-    '          <option value="null">Select...</option>\n' +
-    '          <option value="M">Male</option>\n' +
-    '          <option value="F">Female</option>\n' +
-    '        </select>\n' +
-    '      </biz-form-field>\n' +
+    '        <biz-form-field\n' +
+    '          title="CVV" for="cvc"\n' +
+    '          no-validation="true"\n' +
+    '          small="true">\n' +
+    '          <input type="text" ng-model="$ctrl.cc.cvc" maxlength="4">\n' +
+    '        </biz-form-field>\n' +
     '\n' +
-    '      <biz-form-field\n' +
-    '        title="Email" for="email"\n' +
+    '      </div>\n' +
+    '\n' +
+    '      <div class="_form" ng-if="$ctrl.search.flight_type == \'shuttle\'" ng-repeat="f in $ctrl.passengersArr track by $index">\n' +
+    '\n' +
+    '        <h3>Passenger #{{$index+1}}</h3>\n' +
+    '\n' +
+    '        <biz-form-field\n' +
+    '        title="Name" for="name"\n' +
     '        no-validation="true"\n' +
     '        small="true">\n' +
-    '        <input type="email" ng-model="$ctrl.passengersArr[$index].email">\n' +
-    '      </biz-form-field>\n' +
+    '          <input type="text" ng-model="$ctrl.passengersArr[$index].name">\n' +
+    '        </biz-form-field>\n' +
     '\n' +
-    '      <biz-form-field\n' +
-    '        title="Passport" for="passport"\n' +
-    '        no-validation="true"\n' +
+    '        <biz-form-field\n' +
+    '        title="Birthdate" for="birthdate"\n' +
     '        small="true">\n' +
-    '        <input type="text" ng-model="$ctrl.passengersArr[$index].passport">\n' +
-    '      </biz-form-field>\n' +
+    '          <biz-datetime model="$ctrl.passengersArr[$index].birthdate" type="date" format="YYYY-MM-DD"></biz-datetime>\n' +
+    '        </biz-form-field>\n' +
     '\n' +
-    '      <biz-autocomplete title="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>\n' +
-    '\n' +
-    '      <biz-form-field\n' +
-    '        title="Passport expiration" for="passport_expiration"\n' +
+    '        <biz-form-field\n' +
+    '        title="Gender" for="gender"\n' +
     '        small="true">\n' +
-    '        <biz-datetime model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM-DD"></biz-datetime>\n' +
-    '      </biz-form-field>\n' +
+    '          <select name="gender" id="gender" ng-model="$ctrl.passengersArr[$index].gender">\n' +
+    '            <option value="null">Select...</option>\n' +
+    '            <option value="M">Male</option>\n' +
+    '            <option value="F">Female</option>\n' +
+    '          </select>\n' +
+    '        </biz-form-field>\n' +
+    '\n' +
+    '        <biz-form-field\n' +
+    '          title="Email" for="email"\n' +
+    '          no-validation="true"\n' +
+    '          small="true">\n' +
+    '          <input type="email" ng-model="$ctrl.passengersArr[$index].email">\n' +
+    '        </biz-form-field>\n' +
+    '\n' +
+    '        <biz-form-field\n' +
+    '          title="Passport" for="passport"\n' +
+    '          no-validation="true"\n' +
+    '          small="true">\n' +
+    '          <input type="text" ng-model="$ctrl.passengersArr[$index].passport">\n' +
+    '        </biz-form-field>\n' +
+    '\n' +
+    '        <biz-autocomplete title="Passport country" type="countries" model="$ctrl.passengersArr[$index].passport_country"></biz-autocomplete>\n' +
+    '\n' +
+    '        <biz-form-field\n' +
+    '          title="Passport expiration" for="passport_expiration"\n' +
+    '          small="true">\n' +
+    '          <biz-datetime model="$ctrl.passengersArr[$index].passport_expiration" type="date" format="YYYY-MM-DD"></biz-datetime>\n' +
+    '        </biz-form-field>\n' +
+    '\n' +
+    '        <biz-form-field\n' +
+    '          title="User is disabled?" for="is_disabled_person"\n' +
+    '          small="true">\n' +
+    '          <biz-switcher model="$ctrl.passengersArr[$index].is_disabled_person"></biz-switcher>\n' +
+    '        </biz-form-field>\n' +
+    '      </div>\n' +
+    '\n' +
+    '      <button ng-click="$ctrl.checkout()">Purchase</button>\n' +
     '    </div>\n' +
-    '\n' +
-    '    <button ng-click="$ctrl.checkout()">Purchase</button>\n' +
     '  </div>\n' +
     '</div>\n' +
     '');
@@ -304,7 +362,8 @@ module.run(['$templateCache', function($templateCache) {
     '  <div class="flight-type">\n' +
     '    <biz-dropdown-select\n' +
     '      model="$ctrl.data.flight_type"\n' +
-    '      list = \'$ctrl.types\' value="$ctrl.data.type">\n' +
+    '      list = \'$ctrl.types\'\n' +
+    '      value="$ctrl.data.flight_type">\n' +
     '\n' +
     '    </biz-dropdown-select>\n' +
     '  </div>\n' +
@@ -336,39 +395,75 @@ module.run(['$templateCache', function($templateCache) {
     '  <search-form></search-form>\n' +
     '\n' +
     '  <div class="flights-list">\n' +
+    '\n' +
     '    <div class="flight-item" ng-repeat="item in $ctrl.flights">\n' +
-    '      <div class="flex-block-row align-space-between">\n' +
-    '        <div class="from-to">\n' +
     '\n' +
-    '          <div class="flight-number">{{item.flight_number}}</div>\n' +
+    '      <div ng-if="$ctrl.search.flight_type != \'full-charter\'">\n' +
+    '        <div class="flex-block-row align-space-between">\n' +
+    '          <div class="from-to">\n' +
     '\n' +
-    '          <div class="direction">\n' +
-    '            {{item.departure_airport.name}} <span class="country-city">({{item.departure_airport.country.name}}, {{item.departure_airport.city}})</span>\n' +
+    '            <div class="flight-number">{{item.flight_number}}</div>\n' +
+    '\n' +
+    '            <div class="direction">\n' +
+    '              {{item.departure_airport.name}} <span class="country-city">({{item.departure_airport.country.name}}, {{item.departure_airport.city}})</span>\n' +
+    '            </div>\n' +
+    '            <div class="direction">\n' +
+    '              {{item.arrive_airport.name}} <span class="country-city">({{item.arrive_airport.country.name}}, {{item.arrive_airport.city}})</span>\n' +
+    '            </div>\n' +
     '          </div>\n' +
-    '          <div class="direction">\n' +
-    '            {{item.arrive_airport.name}} <span class="country-city">({{item.arrive_airport.country.name}}, {{item.arrive_airport.city}})</span>\n' +
+    '\n' +
+    '          <div class="airline">\n' +
+    '            {{item.airline.name}}\n' +
     '          </div>\n' +
     '        </div>\n' +
     '\n' +
-    '        <div class="airline">\n' +
-    '          {{item.airline.name}}\n' +
+    '        <div class="flex-block-row align-space-between">\n' +
+    '\n' +
+    '          <div class="available">\n' +
+    '        <span>\n' +
+    '          <i class="fa fa-calendar-o" aria-hidden="true"></i>\n' +
+    '          {{ item.available_from || \'10/10/2015\'}}\n' +
+    '        </span>\n' +
+    '            <span>to</span>\n' +
+    '            <span>\n' +
+    '          <i class="fa fa-calendar-times-o" aria-hidden="true"></i>\n' +
+    '          {{item.available_to || \'10/10/2016\'}}</span>\n' +
+    '          </div>\n' +
+    '\n' +
+    '          <div class="aircraft-name">\n' +
+    '            <i class="fa fa-plane"></i>\n' +
+    '            {{item.aircraft.aircraft.name}}\n' +
+    '          </div>\n' +
+    '\n' +
     '        </div>\n' +
+    '\n' +
     '      </div>\n' +
     '\n' +
-    '      <div class="flex-block-row align-space-between">\n' +
-    '        <div class="aircraft-name">\n' +
-    '          <i class="fa fa-plane"></i>\n' +
-    '          {{item.aircraft.aircraft.name}}\n' +
-    '        </div>\n' +
+    '      <div ng-if="$ctrl.search.flight_type == \'full-charter\'">\n' +
+    '        <biz-aircraft-item aircraft="item"></biz-aircraft-item>\n' +
     '      </div>\n' +
     '\n' +
     '      <div class="flex-block-row align-center-v-h">\n' +
-    '        <a class="btn btn-primary _thin" ng-click="$ctrl.select(item)">Select</a>\n' +
+    '        <a class="btn btn-primary _thin" ng-click="$ctrl.select(item)">Checkout <b>{{item.fare | number:2}}$</b></a>\n' +
     '      </div>\n' +
     '    </div>\n' +
     '  </div>\n' +
     '</div>\n' +
     '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/switcher/switcher.tpl.html',
+    '<a href="#" ng-click="$ctrl.switchIt($event)">\n' +
+    '    <span class="switcher" ng-class="{\'on\': $ctrl.model}"></span>\n' +
+    '</a>');
 }]);
 })();
 
@@ -393,6 +488,34 @@ module.run(['$templateCache', function($templateCache) {
     '    </div>\n' +
     '</div>\n' +
     '');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('templates');
+} catch (e) {
+  module = angular.module('templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/aircraft-item/photo-slider/photo-slider.tpl.html',
+    '<div class="photo-slider">\n' +
+    '    <div class="slider-container" style="left: {{-$ctrl.current * 100}}%">\n' +
+    '        <div class="slider-item"\n' +
+    '             ng-repeat="photo in $ctrl.photos"\n' +
+    '             style="background-image: url(\'{{photo.url}}\')"></div>\n' +
+    '    </div>\n' +
+    '    <div class="slider-controls" ng-show="$ctrl.photos.length > 1">\n' +
+    '        <a href ng-click="$ctrl.left()" ng-show="$ctrl.current != 0">\n' +
+    '            <i class="fa fa-chevron-left" aria-hidden="true"></i>\n' +
+    '        </a>\n' +
+    '        <span class="flex"></span>\n' +
+    '        <span class="slider-index">{{$ctrl.current + 1}} of {{$ctrl.photos.length}}</span>\n' +
+    '        <a href ng-click="$ctrl.right()" ng-show="$ctrl.current != ($ctrl.photos.length - 1)">\n' +
+    '            <i class="fa fa-chevron-right" aria-hidden="true"></i>\n' +
+    '        </a>\n' +
+    '    </div>\n' +
+    '</div>');
 }]);
 })();
 

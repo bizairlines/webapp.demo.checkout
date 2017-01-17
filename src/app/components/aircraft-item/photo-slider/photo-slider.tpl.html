@@ -1,0 +1,17 @@
+<div class="photo-slider">
+    <div class="slider-container" style="left: {{-$ctrl.current * 100}}%">
+        <div class="slider-item"
+             ng-repeat="photo in $ctrl.photos"
+             style="background-image: url('{{photo.url}}')"></div>
+    </div>
+    <div class="slider-controls" ng-show="$ctrl.photos.length > 1">
+        <a href ng-click="$ctrl.left()" ng-show="$ctrl.current != 0">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </a>
+        <span class="flex"></span>
+        <span class="slider-index">{{$ctrl.current + 1}} of {{$ctrl.photos.length}}</span>
+        <a href ng-click="$ctrl.right()" ng-show="$ctrl.current != ($ctrl.photos.length - 1)">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>

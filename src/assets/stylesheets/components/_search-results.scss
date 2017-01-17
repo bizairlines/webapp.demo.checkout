@@ -10,6 +10,7 @@
     height: 150px;
     top: 0;
     background: #607D8B;
+    z-index: 10;
 
     .search-form {
       margin: 40px auto;
@@ -56,6 +57,20 @@
         padding: 0 10px;
         background: #607d8b;
         text-transform: uppercase;
+      }
+
+
+      .available {
+        span {
+          color : $listControl;
+          margin-right: 15px;
+        }
+      }
+
+      > div {
+        &:nth-child(even) {
+          margin: 15px 0;
+        }
       }
 
     }

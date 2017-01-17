@@ -1,0 +1,41 @@
+.switcher {
+  position: relative;
+  display: inline-block;
+  width: 76px;
+  height: 30px;
+  @include border-radius(6px);
+  background-color: $switcherInactive;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    margin: 4px;
+    background: #ffffff;
+    @include border-radius(6px);
+  }
+
+  &:after {
+    content: 'OFF';
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    color: $darkGray;
+    font-weight: bold;
+  }
+
+  &.on {
+    background-color: $switcherActive;
+
+    &:before {
+      right: 0;
+    }
+
+    &:after {
+      content: 'ON';
+      left: 10px;
+      color: #ffffff;
+    }
+  }
+}

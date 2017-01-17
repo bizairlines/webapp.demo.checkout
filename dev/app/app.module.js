@@ -11,5 +11,7 @@ angular
         'dropdown-select',
         'checkout',
         'form-field',
-        'ui.mask'
+        'ui.mask',
+        'switcher',
+        'aircraft-item'
     ]);

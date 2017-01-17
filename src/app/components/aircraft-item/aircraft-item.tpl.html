@@ -1,0 +1,33 @@
+<div class="aircraft" ng-class="{'selected': $ctrl.aircraft.selected}">
+    <div class="select-item checkbox" ng-if="$ctrl.selecting">
+        <input id="{{'select_' + $ctrl.specialKey}}"
+               type="checkbox"
+               name="{{'select_' + $ctrl.specialKey}}"
+               ng-click="$ctrl.select()"
+               ng-model="$ctrl.aircraft.selected"/>
+        <label for="{{'select_' + $ctrl.specialKey}}">&nbsp;</label>
+    </div>
+    <biz-photo-slider photos="$ctrl.aircraft.upload"></biz-photo-slider>
+    <div class="info flex flex-block-column">
+        <div class="header flex-block-row">
+            <h2>{{$ctrl.aircraft.aircraft.name}}</h2>
+            <h2>{{$ctrl.aircraft.registration_number}}</h2>
+            <h3>{{$ctrl.aircraft.aircraft.category || 'No category'}} | {{$ctrl.aircraft.aircraft.manufacturer.name}}</h3>
+        </div>
+        <div class="content container-fluid flex" ng-if="!$ctrl.view || $ctrl.view == 'basic_info'">
+            <div class="row no-h-padding">
+                <div class="amenities col-xs flex-block-row right-border">
+                    <div class="amount-of-seats"><span>{{$ctrl.aircraft.passenger_capacity}}</span> seats</div>
+                    <div ng-show="$ctrl.aircraft.has_entertainment"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                    <div ng-show="$ctrl.aircraft.has_wifi"><i class="fa fa-wifi" aria-hidden="true"></i></div>
+                    <div ng-show="$ctrl.aircraft.has_power_outlet"><i class="fa fa-plug" aria-hidden="true"></i></div>
+                    <div ng-show="$ctrl.aircraft.has_laptop_seat"><i class="fa fa-laptop" aria-hidden="true"></i></div>
+                </div>
+                <div class="location col-xs-4 flex-block-column right-border">
+                    <div class="code"><i class="fa fa-map-marker" aria-hidden="true"></i>{{$ctrl.aircraft.airport.iata_code}}</div>
+                    <div>Base location</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

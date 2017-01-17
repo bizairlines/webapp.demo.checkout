@@ -44,7 +44,5 @@
       return $http.put(API + '/bookings/' + biz_locator + '/pnr/' + pnrId, d);
     }
 
-    // PUT /bookings/$biz_locator/pnr/$pnrId
-
   }
 })();

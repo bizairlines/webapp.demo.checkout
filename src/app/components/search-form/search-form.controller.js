@@ -13,6 +13,7 @@
         ctrl.types = TYPES;
 
         ctrl.data = $stateParams.data || {};
+
         if($stateParams.data) {
           ctrl.data.seats = $stateParams.data.seats || 1;
         } else {ctrl.data.seats = 1;}
